@@ -69,15 +69,17 @@
                             </div>
                         </div>
 
-                        <div claas="form-group row">
-                    <label for="captcha" class="col-md-4 col-form-label text-md-right">{{__("captcha") }}</label>
+                        <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('captcha') }}</label>
 
-                <div class="col-md-6">
-                <div class="captcha">
-                        <span>{!! captcha_img() !!}</span>
-                    <button type="button" class="btn btn-success btn-refersh">Refresh</button>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                            <div class="captcha">
+                            <span>{!! captcha_img() !!}</span>
+                            <button type="submit" class="btn btn-success btn-refersh"><a style="text-decoration:none;color:white" href="{{route('register')}}">Refresh</a></button>
                         </div>
-                        <input type="text" id="captcha" class="form-control" placeholder="Enter Captcha" name="captcha">
+                        
+                        <input type="captcha" id="captcha" class="form-control" placeholder="Enter Captcha" name="captcha">
                         @if ($errors->has('captcha'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('captcha') }}</strong>
@@ -85,6 +87,7 @@
                             @endif
                             </div>
                         </div>
+               
                             
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

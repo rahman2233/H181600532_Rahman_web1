@@ -72,4 +72,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+        public function refreshCaptcha()
+    {
+        return captcha_img('flat');
+    
+    }
 }
